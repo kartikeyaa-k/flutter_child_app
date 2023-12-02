@@ -3,7 +3,7 @@ on:
     branches:
       - master
       - development
-name: "Build and Release to Firebase"
+name: "Build and Release Android to Firebase"
 jobs:
   build:
     name: Build and Release to Firebase
