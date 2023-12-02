@@ -1,0 +1,41 @@
+on:
+  push:
+    branches:
+      - master
+      - development
+name: "Build and Release to Firebase"
+jobs:
+  build:
+    name: Build and Release iOS to Firebase
+    runs-on: macos_latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "3.16.0"
+      - run: flutter clean
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: |
+          cd ios
+          rm podfile.lock
+          pod deintegrate 
+          pod repo update 
+          pod install 
+      - run: |
+          flutter build ios --no-codesign
+          cd build/ios/iphones
+          mkdir payload
+          cd payload
+          ln -s ../Runner.app
+          cd ..
+          zip -r app.ipa payload
+      - name: Push to Github Release
+        uses: ncipollo/release-action@v1
+        with: 
+          artifacts: "build/app/outputs/apk/release/*"
+          tag: v1.0.${{github.run_number}}
+          token: ${{secrets.TOKEN}}
