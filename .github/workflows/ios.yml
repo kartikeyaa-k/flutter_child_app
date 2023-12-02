@@ -3,10 +3,10 @@ on:
     branches:
       - main
       - development
-name: "Build and Release iOS to Firebase"
+name: "Build and Release iOS to Github"
 jobs:
   build:
-    name: Build and Release iOS to Firebase
+    name: Build and Release iOS to Github
     runs-on: macos_latest
     steps:
       - uses: actions/checkout@v1
