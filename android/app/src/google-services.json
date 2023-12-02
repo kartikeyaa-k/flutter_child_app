@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "809473504017",
+    "project_id": "cicd-demo-bcdb2",
+    "storage_bucket": "cicd-demo-bcdb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809473504017:android:0e0f987a5dab8b071692b0",
+        "android_client_info": {
+          "package_name": "com.example.child_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ7muRYZKA88JFOPA7yNE5ncrtMZxUhlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

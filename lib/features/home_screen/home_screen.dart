@@ -6,7 +6,6 @@ import 'package:child_app/core/mock_data/mock_parsed_countries.dart';
 import 'package:child_app/core/mock_model/mock_country_with_cities_model.dart';
 import 'package:child_app/core/utils/snackbar/app_snackbar.dart';
 import 'package:child_app/features/login_screen/login_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
